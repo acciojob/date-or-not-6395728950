@@ -1,5 +1,15 @@
-var isDate = function (input) {
-  //   write your code here
+var isDate = function(input) {
+    if (Object.prototype.toString.call(input) === '[object Date]') {
+        return true;
+    }
+
+    if (typeof input !== 'string') {
+        return false;
+    }
+
+    var timestamp = Date.parse(input);
+
+    return isNaN(timestamp) === false;
 };
 
 // Do not change the code below.
